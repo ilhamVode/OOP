@@ -1,6 +1,6 @@
 
 using Xunit;
-using MyFirstProject;
+using Lab1;
 
 public class ProductStorageTests
 {

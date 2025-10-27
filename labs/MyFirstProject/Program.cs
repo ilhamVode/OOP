@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("MyFirstProject.Tests")]
 
-namespace MyFirstProject;
+namespace Lab1;
 
 
 /// <summary>
@@ -375,7 +375,7 @@ public class VendingMachine : IVendingMachine
     /// <summary>
     /// Перенос всех монет из буфера в кошелек автомата.
     /// </summary>
-    internal void TransferAllCoinsFromBufferToVendingWallet()
+    public void TransferAllCoinsFromBufferToVendingWallet()
     {
         // Копия нужна чтобы итерироваться по всем элеменетам и не столкунться с ошибкой в foreach
         var copy_buffer = new Dictionary<decimal, int>(VendingBuffer.Coins);
@@ -391,7 +391,7 @@ public class VendingMachine : IVendingMachine
     /// </summary>
     /// <param name="change">Необходимая сумма сдачи (>= 0).</param>
     /// <returns>Словарь (номинал -> количество) требуемой сдачи или пустой словарь если собрать нельзя.</returns>
-    internal Dictionary<decimal, int> GetChange(decimal change)
+    public Dictionary<decimal, int> GetChange(decimal change)
     {
         // Словарь всех монет из буффера и кошелька. При таком подходе сдача с большим шансом сформируется т.к. в диапазон добавляется буффер
         Dictionary<decimal, int> temp_wallet = new();
